@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="MyFirstApp">
+<html ng-app="controller/MyFirstApp">
     <head>
         <meta charset="utf-8">
         <title>Hola mundo con AngularJS</title>
@@ -7,17 +7,17 @@
         <script src="controller.js"></script>
     </head>
 
-    <body ng-controller="FirstController">
-        <input type="text" ng-model="nuevoComentario.comentario"><br>
-        <input type="text" ng-model="nuevoComentario.username"><br>
-        <button ng-click="agregarComentario()">
+    <body ng-controller="controller/FirstController">
+        <input type="text" ng-model="controller/nuevoComentario.comentario"><br>
+        <input type="text" ng-model="controller/nuevoComentario.username"><br>
+        <button ng-click="controller/agregarComentario()">
             Agregar comentario
         </button>
         <h3>Comentarios</h3>
         <ul>
-            <li ng-repeat="comentario in comentarios">
-                {{comentario.comentario}} - <strong>
-                    {{comentario.username}}</strong>
+            <li ng-repeat="controller/comentario in comentarios">
+                {{controller/comentario.controller/comentario}} - <strong>
+                    {{controller/comentario.username}}</strong>
             </li>
         </ul>
     </body>
