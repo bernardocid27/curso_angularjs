@@ -1,8 +1,8 @@
 var app = angular.module("MyFirstApp",[]);
-app.controller("FirstController",function($scope){
-    $scope.nombre="Uriel";
-    $scope.nuevoComentario = {};
-    $scope.comentarios = [
+app.controller("FirstController",["$scope",function(m){
+    m.nombre="Uriel";
+    m.nuevoComentario = {};
+    m.comentarios = [
         {
             comentario: "Buen tutorial",
             username: "codigofacilito"
@@ -12,10 +12,10 @@ app.controller("FirstController",function($scope){
             username: "otro_usuario"
         }
     ];
-    $scope.agregarComentario = function(){
-        $scope.comentarios.push($scope.nuevoComentario);
-        $scope.nuevoComentario = {};
+    m.agregarComentario = function(){
+        m.comentarios.push(m.nuevoComentario);
+        m.nuevoComentario = {};
     }
-});
+}]);
 
 //MVVM 
