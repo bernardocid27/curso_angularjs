@@ -4,14 +4,14 @@ angular.module("CustomDirective",[])
         $(element).autocomplete({
             source: scope[attrs.myAutocomplete],
             select: function(ev,ui){
-                ev.preventDefualt();
+                ev.preventDefault();
                 if(ui.item){
                     scope.optionSelected(ui.item.value);
                 }
             },
             focus: function(ev,ui){
-                ev.preventDefualt();
-                
+                ev.preventDefault();
+                $(this).val(ui.item.label);
             }
         });
     };
@@ -47,4 +47,9 @@ angular.module("CustomDirective",[])
     .error(function(err){
        
     });
+    $scope.optionSelected = function(data){
+        $scope.$apply(function(){
+            $scope.main_repo = data;
+        })
+    }
 });
